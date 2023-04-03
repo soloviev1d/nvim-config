@@ -496,12 +496,13 @@ cmp.setup {
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+-- open netrwvim :set ts=4 sw=4 sts=4 et :
 --
 -- map line movements
 vim.keymap.set('n','<A-k>',":m-2<CR>", {silent = true})
 vim.keymap.set('n','<A-j>',":m+<CR>", {silent = true})
 
--- open netrw
+
 vim.keymap.set('n','<leader>rw',":Explore<CR>", {silent = true})
 -- run build.sh
 vim.keymap.set('n','<F8>', ":! ./build.sh<CR>")
@@ -511,3 +512,10 @@ vim.keymap.set('n', '<Left>', '<Nop>')
 vim.keymap.set('n', '<Right>', '<Nop>')
 vim.keymap.set('n', '<Up>', '<Nop>')
 vim.keymap.set('n', '<Down>', '<Nop>')
+
+
+vim.opt.expandtab = true-- use spaces instead of tabs
+vim.opt.shiftwidth = 4        -- shift 4 spaces when tab
+vim.opt.softtabstop = 4
+vim.opt.tabstop = 4           -- 1 tab == 4 spaces
+vim.opt.smartindent = true    -- autoindent new lines
