@@ -595,3 +595,6 @@ vim.opt.tabstop = 4           -- 1 tab == 4 spaces
 vim.opt.smartindent = true    -- autoindent new lines
 
 vim.cmd("colorscheme kanagawa")
+-- Line below allows only limited use for binds (alt +j/k doesnt work) 
+-- Probably could be fixed with https://github.com/mrgoodvin/ranger_keybord
+vim.cmd("set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz")
