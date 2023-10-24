@@ -71,7 +71,8 @@ require('lazy').setup({
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
   --kanagawa theme
-  'rebelot/kanagawa.nvim',
+  -- 'rebelot/kanagawa.nvim',
+  { 'rose-pine/neovim', as = 'rose-pine' },
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
@@ -130,7 +131,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'kanagawa',
+        theme = 'rose-pine-moon',
         component_separators = '|',
         section_separators = '',
       },
@@ -594,7 +595,16 @@ vim.opt.softtabstop = 4
 vim.opt.tabstop = 4           -- 1 tab == 4 spaces
 vim.opt.smartindent = true    -- autoindent new lines
 
-vim.cmd("colorscheme kanagawa")
 -- Line below allows only limited use for binds (alt +j/k doesnt work) 
 -- Probably could be fixed with https://github.com/mrgoodvin/ranger_keybord
 vim.cmd("set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz")
+
+-- vim.cmd("colorscheme kanagawa")
+require('rose-pine').setup({
+--[[   dark_variant = 'main',
+  dim_nc_background = true, ]]
+  disable_background = true
+})
+vim.cmd("colorscheme rose-pine")
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
