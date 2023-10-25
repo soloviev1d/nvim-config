@@ -125,18 +125,18 @@ require('lazy').setup({
     end,
   },
 
-  { -- Set lualine as statusline
-    'nvim-lualine/lualine.nvim',
-    -- See `:help lualine.txt`
-    opts = {
-      options = {
-        icons_enabled = false,
-        theme = 'rose-pine-moon',
-        component_separators = '|',
-        section_separators = '',
-      },
-    },
-  },
+  -- { -- Set lualine as statusline
+  --   'nvim-lualine/lualine.nvim',
+  --   -- See `:help lualine.txt`
+  --   opts = {
+  --     options = {
+  --       icons_enabled = false,
+  --       theme = 'rose-pine-moon',
+  --       component_separators = '|',
+  --       section_separators = '',
+  --     },
+  --   },
+  -- },
 
   { -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
@@ -603,7 +603,10 @@ vim.cmd("set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEF
 require('rose-pine').setup({
 --[[   dark_variant = 'main',
   dim_nc_background = true, ]]
-  disable_background = true
+  disable_background = true,
+  highlight_groups = {
+    StatusLine = { fg = 'none', bg = 'none', blend = 10 },
+  }
 })
 vim.cmd("colorscheme rose-pine")
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
